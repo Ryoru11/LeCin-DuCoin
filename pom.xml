@@ -16,7 +16,15 @@
     <properties>
         <java.version>1.8</java.version>
     </properties>
+    
     <dependencies>
+        <dependency>
+            <groupId>com.sample</groupId>
+            <artifactId>sample</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/src/main/resources/jdbc.jar</systemPath>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -45,9 +53,7 @@
             <artifactId>api</artifactId>
             <version>0.8.0</version>
         </dependency>
-
-    </dependencies>
-    
+    </dependencies>   
 
     <build>
         <plugins>
