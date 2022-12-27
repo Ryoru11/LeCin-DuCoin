@@ -120,7 +120,7 @@ body
 {
     font-size: 3em;
     margin-bottom : 7px;
-    margin-top : 20px;
+    margin-top : 40px;
     text-align : center;
     color : whitesmoke;
     text-decoration : None;    
@@ -295,4 +295,49 @@ position: absolute;
     padding-top : 20px;
     padding-right : 20px;
     padding-left : 15px;
+}
+
+
+
+.messageArea{
+    margin: auto;
+    margin-top:40px;
+    border: 1px lightgray solid;
+    width: 39%;
+    padding: 0px;
+    overflow-y: scroll;
+    height:300px;
+}
+
+td {display:block; box-sizing:border-box; clear:both}
+
+table {width: 100%;}
+
+.deletebutton {
+    float: right;
+}
+
+
+.bootstrap_chat {
+  background-color: #74EBD5;
+  min-height: 100vh;
+}
+
+.text-small {
+  font-size: 0.9rem;
+}
+
+.messages-box, .chat-box {
+  height: 510px;
+  overflow-y: scroll;
+}
+
+.rounded-lg {
+  border-radius: 0.5rem;
+}
+
+#sendMessageForm{
+    margin-top: 40px;
+    margin: auto;
+    width: 40%;
 }
