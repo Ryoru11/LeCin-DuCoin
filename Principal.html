@@ -141,7 +141,7 @@
                         <br>
                             Synopsis
 
-                            Blabllalalalalalalalalallaallalalalalalalalalalal
+                           Dans l'ancien Kahndaq, Teth Adam a reçu les pouvoirs tout-puissants des dieux. Après avoir utilisé ces pouvoirs pour se venger, il a été emprisonné, devenant Black Adam. Près de 5 000 ans se sont écoulés et Black Adam est passé de l'homme au mythe puis à la légende.
                         </div>
                      <br>
                     <h1 id="caract"> Schedule: </h1>
@@ -187,24 +187,56 @@
             <br>
         </div>
         Your name:
-        <form action="/addCustomer" method="GET" class="bg-light">
+        <form action="/addName" method="GET" class="bg-light">
             <div class="input-group">
-                <input type="text" name="userName" placeholder="Your name" aria-describedby="button-addon2" class="form-control rounded-0 border-0 bg-light">
-                <br>
-                <input type="text" name="userSurname" placeholder="Your Surname" aria-describedby="button-addon2" class="form-control rounded-0 border-0 bg-light">
-                <br>
-                <input type="text" name="userPassword" placeholder="Your Password" aria-describedby="button-addon2" class="form-control rounded-0 border-0 bg-light">
-                <div class="input-group-append pb-1">
-                     <button id="button-addon2" type="submit" class="btn btn-link" style=background-color:aqua>
-                        Submit
-                    </button>
-                </div>
+                <input type="text" name="message" placeholder="Your name" aria-describedby="button-addon2" class="form-control rounded-0 border-0 bg-light">
             </div>
         </form>
+
+        Your Surname:
+        <form action="/addSurname" method="GET" class="bg-light">
+            <div class="input-group">
+                <input type="text" name="message" placeholder="Your Surname" aria-describedby="button-addon2" class="form-control rounded-0 border-0 bg-light">
+            </div>
+        </form>
+
+        Your Password:
+        <form action="/addPassword" method="GET" class="bg-light">
+            <div class="input-group">
+                <input type="text" name="message" placeholder="Your Password" aria-describedby="button-addon2" class="form-control rounded-0 border-0 bg-light">
+               
+            </div>
+        </form>
+
+        <div class="input-group-append pb-1">
+            <button id="button-addon2" type="submit" class="btn btn-link" style=background-color:aqua>
+                Submit
+            </button>
+        </div>
     </div>
 
 
     
+    <div class="messageArea" id="messageArea" >
+
+
+    </div>
+    
+    <div id="sendMessageForm" class="ml-2 mr-2">
+        <form action="/addMessageandResponse" method="GET" class="bg-light">
+            <div class="input-group">
+                <input type="text" name="message" placeholder="Type a message" aria-describedby="button-addon2" class="form-control rounded-0 border-0 bg-light">
+                <div class="input-group-append pb-1">
+                    <button id="button-addon2" type="submit" class="btn btn-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-send mr-1 mt-1 pb-1" viewBox="0 0 16 16">
+                            <path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576 6.636 10.07Zm6.787-8.201L1.591 6.602l4.339 2.76 7.494-7.493Z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </form>
+    
+    </div>
 
     <footer>
         <div id = "footer">
@@ -220,6 +252,8 @@
                 <br>
             </ul>
         </div>
+
+
     </footer>
 </body>
 
