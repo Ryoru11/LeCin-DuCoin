@@ -1,0 +1,298 @@
+header
+{
+    color:  #000000 ;
+    display: flex;
+    width: 1000px;
+    background-color: #a4b600;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom : 80px;
+    font-family: 'Crimson Pro', serif;
+    font-weight : 800;
+}
+
+#CompanyName
+{
+    margin-left: 160px;
+    margin-bottom: 18px;
+    margin-top: -107;
+    font-size: 50;
+}
+
+#MenuHeader
+{
+    margin-left: 556;
+    font-size: 22;
+    margin-top: -53;
+}
+
+#MenuHeader ul
+{
+    list-style-type: none;
+    display: flex;
+}
+
+#MenuHeader a
+{
+    font-size: 1.3em;
+    color: #000000;
+    padding-bottom: 3px;
+    margin-right: 30px;
+    text-decoration: none;
+}
+
+#MenuHeader a:hover
+{
+    color: #ffffff;
+    border-left: 20px;
+    border-bottom: 3px solid #ffffff;
+}
+
+footer
+{
+    background-color: #a4b600;
+    padding-bottom: 20px;
+    color : black;
+    font-family: 'Crimson Pro', serif;
+}
+
+#footer
+{
+    display: flex;
+    font-size: 0.8em;
+    margin-top :50px;
+}
+
+footer a
+{
+    font-size: 1.2em;
+    color: black;
+    padding-bottom: 3px;
+    margin-right: 50px;
+    text-decoration: none;
+}
+
+footer a:hover
+{
+    color: #ffffff;
+    border-bottom: 3px solid #ffffff;
+    padding-right: 100px;
+    border-left: 2px solid white;
+}
+
+
+#logo2 img
+{
+    width: 200px;
+    height: 200px;
+    padding-top : 5px;
+    margin-left : 20px
+}
+
+#logo2
+{
+    
+    width : 250px;
+}
+
+
+#logo img
+{
+    width: 150px;
+    height: 150px;
+    margin-left : 20px
+}
+
+
+body
+{
+    margin: auto;
+    width: 1000px;
+    background-color: #a09591;
+    background-image:url("Background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Roboto', sans-serif;
+    color: #000000;
+}
+
+#titre1
+{
+    font-size: 3em;
+    margin-bottom : 7px;
+    margin-top : 20px;
+    text-align : center;
+    color : whitesmoke;
+    text-decoration : None;    
+    font-family: 'Crimson Pro', serif;
+    text-decoration: underline;
+    font-weight: bolder;
+}
+
+#titre1:hover
+{
+    color : lightgray;
+}
+
+
+#HighLight
+{
+    background-color: #1c1a19;
+    margin-top: 30px;
+    padding-top: 2px;
+    
+}
+
+#Login
+{
+    background-repeat: no-repeat;
+    background-color: goldenrod;
+    margin:auto;
+    width: 50%;
+    padding: 10px;
+    text-align: center;
+    border: 3px solid black;
+    font-size: small;
+}
+
+
+
+#LoginText
+{
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: medium;
+}
+
+
+#cadre1
+{
+    background-color: #3A5896;
+    box-shadow: 4px 4px 5px #1c1a19;
+    color:rgb(255,255,255);
+    width: 300px;
+    height:360px;
+    margin : auto;
+    margin-bottom : 35px;
+}
+
+#cadre1:hover
+{
+    background-color: #134273;
+}
+
+
+#text
+{
+    word-wrap: break-word;
+    width: 290px;
+    margin : auto;
+}
+
+
+#cadre
+{
+    margin-bottom : 0px;
+    margin-top : 10px;
+}
+
+
+.container
+{
+    margin:  auto;
+    position: relative;
+    overflow: hidden;
+    background-color: #1c1a19;
+    
+
+}
+
+.container p
+{
+    color:white;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: medium;
+}
+
+.container span
+{
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+position: absolute;
+}
+
+.container ul, .container li
+{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.container li
+{
+    display: none;
+}
+
+.container li.active
+{
+    display: inline;
+}
+
+
+#aside
+{
+    display: flex;
+    background-color: floralwhite;
+    box-shadow: 4px 4px 30px #1c1a19;
+    border-radius:50px;
+}
+
+#aside:hover
+{
+    background-color:rgb(121, 92, 19);
+}
+
+
+
+#nom
+{
+    
+    font-size: 24pt;
+    margin-left:50px;
+    font-weight: bold;
+}
+
+
+#type
+{
+    font-size:12pt;
+    margin-left:50px;
+    font-weight:normal;
+}
+
+
+#photo
+ {
+    margin-top: 10px ;
+    margin-left: 25px;
+
+ }
+
+#text
+{   
+    font-size : 1.1em;  
+    text-align : center;
+    word-wrap: break-word;
+    width: 600px;
+    height:150px;
+    margin-left : 20px;
+    margin-right: 20px;
+    background-color:darkgoldenrod;
+    box-shadow: 4px 4px 3px #1c1a19;
+    border-radius:30px;
+    padding-bottom : 10px;
+    padding-top : 20px;
+    padding-right : 20px;
+    padding-left : 15px;
+}
