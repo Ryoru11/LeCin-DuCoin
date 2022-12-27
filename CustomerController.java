@@ -40,10 +40,13 @@ public class CustomerController {
     }
 
     @GetMapping("/addCustomer")
-    public RedirectView addCustomer(@RequestParam final String userName,@RequestParam final String userSurname,@RequestParam final String userPassword)throws SQLException,ClassNotFoundException,InstantiationException,IllegalAccessException{
+    public RedirectView addCustomer(@RequestParam final String userName, @RequestParam final String userSurname, @RequestParam final String userPassword)throws SQLException,ClassNotFoundException,InstantiationException,IllegalAccessException{
         connectToDatabase();
-        updateTable("INSERT INTO Customer values("+userName+","+userSurname+","+userPassword+")");
+        ResultSet rs = tableInfo("SELECT COUNT(Customer_id) FROM Customer");
+        int custID=rs.getInt(1)+1;
+        updateTable("INSERT INTO Customer values("+custID+",'"+userPassword+"','"+userName+"','"+userSurname+"')");
         disconnectDB();
+
         return new RedirectView("");
     }
 
