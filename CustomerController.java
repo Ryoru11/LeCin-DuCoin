@@ -1,9 +1,9 @@
 package ucy.ece318.assignment3;
 
-import java.sql.;
+import java.sql.*;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.view.RedirectView;
 
 @RestController
@@ -29,25 +29,35 @@ public class CustomerController {
         catch(Exception e){e.printStackTrace();}
     }
 
-    public static ResultSet tableInfo(String Query) throws SQLException{
+    public static ResultSet tableInfo(String Query) throws SQLException,ClassNotFoundException,InstantiationException,IllegalAccessException{
+        connectToDatabase();
         ResultSet rs=stmt.executeQuery(Query);
         rs.next();
+        disconnectDB();
         return rs;
     }
 
-    public static void updateTable(String query) throws SQLException{
+    public static void updateTable(String query) throws SQLException,ClassNotFoundException,InstantiationException,IllegalAccessException{
+        connectToDatabase();
         stmt.executeUpdate(query);
+        disconnectDB();
     }
 
     @GetMapping("/addCustomer")
-    public RedirectView addCustomer(@RequestParam final String userName, @RequestParam final String userSurname, @RequestParam final String userPassword)throws SQLException,ClassNotFoundException,InstantiationException,IllegalAccessException{
+    public static RedirectView addCustomer(@RequestParam final String userName, @RequestParam final String userSurname, @RequestParam final String userPassword)throws SQLException,ClassNotFoundException,InstantiationException,IllegalAccessException{
         connectToDatabase();
         ResultSet rs = tableInfo("SELECT COUNT(Customer_id) FROM Customer");
-        int custID=rs.getInt(1)+1;
-        updateTable("INSERT INTO Customer values("+custID+",'"+userPassword+"','"+userName+"','"+userSurname+"')");
+        int custID;
+        if(rs.getString(1)==null){
+            custID=1;
+        }
+        else{
+            custID=rs.getInt(1)+1;
+        }
+        updateTable("INSERT INTO Customer values("+custID+",\'"+userPassword+"\',\'"+userName+"\',\'"+userSurname+"\')");
         disconnectDB();
 
         return new RedirectView("");
     }
-
+    
 }
