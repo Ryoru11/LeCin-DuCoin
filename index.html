@@ -1,0 +1,256 @@
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro&family=Roboto&display=swap" rel="stylesheet">
+        <meta charset="utf-8">
+        <link rel = "stylesheet" href ="Principal.css"/> 
+        <title> LeCineDuCoin </title>
+
+        <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"></script>
+        <script type="text/babel" src="message.js"></script>
+        <script type="text/javascript" src="jquery-1.10.2.min.js"></script>
+
+        <script type="text/javascript">
+            $(document).ready(function(){
+                var width = 1000;
+                height = 570;
+                var numberOfBlinds = 1;
+                var margin = 0;
+                var color = '#000';
+                gapHeight = 0;
+    
+                var container = $('#container');
+    
+                container.width(width).height(height);
+                var blindWidth = width / numberOfBlinds;
+    
+                images = new Array();
+                $('ul li', container).each(function() {
+                    images.push($(this)); 
+                });
+    
+                images[0].addClass('active');
+                activeImage = 0;
+    
+                for (var i = 0; i < numberOfBlinds; i++) {
+                    var tempEl = $(document.createElement('span'));
+                    var borders = calculateBorders();
+    
+                    tempEl.css({
+                        'left': i * blindWidth,
+                        border: margin + 'px solid ' + color,
+                        borderTop: borders.borderWidthTop + 'px solid ' + color,
+                        borderBottom: borders.borderWidthBottom + 'px solid ' + color,
+                        'height': height,
+                        'width': blindWidth
+                    });
+                    
+                    container.prepend(tempEl);
+                };
+    
+                blinds = $('span', container);
+                setTimeout(animateBorders, 1000);
+            });
+    
+            function calculateBorders() {
+                var random = Math.floor((Math.random()*9)+1);
+                var borderWidthTop = (random / 10) * gapHeight;
+                var borderWidthBottom = gapHeight - borderWidthTop;
+    
+                return {borderWidthTop: borderWidthTop, borderWidthBottom: borderWidthBottom};
+            }
+    
+            function animateBorders() {
+                var changeOccuredOnce = false;
+    
+                blinds.animate({
+                    borderTopWidth: height / 2,
+                    borderBottomWidth: height / 2
+                  }, 1000, function() {
+                          if(!changeOccuredOnce) {
+                            images[activeImage].removeClass('active');
+                            activeImage = (activeImage + 1) % images.length;
+                            images[activeImage].addClass('active');
+                            setTimeout(animateBorders, 3000);
+                              changeOccuredOnce = true;
+                          }
+    
+                        var borders = calculateBorders();
+    
+                        $(this).delay(300).animate({
+                            borderTopWidth: borders.borderWidthTop,
+                            borderBottomWidth: borders.borderWidthBottom
+                        }, 1000);
+                  });
+            }
+        </script>
+    </head>
+
+<body> 
+    <header>
+        <div id = "logo" style="cursor: pointer">
+            <img src = "Logo.png">
+            <h1 id = "CompanyName" style=" cursor: pointer"> Le Cine Du Coin</h1>
+
+            <nav id = "MenuHeader">
+                <ul>
+                    <a href="#"> Home</a>
+                    <a href="#"> Movies</a>
+                    <a href="#"> Login</a>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+    <section id = "Highlights" style="cursor: pointer;">
+        <div id ="titre1">Highlights</div><br>
+		<div class="container" id="container">
+		<ul>
+			<li class="active"><a href=""><img src="BlackAdam.png", width="500px" height="625px" alt="" /><p class="active"> Black Adam</p>
+                <p> Blabllalalalalalalalalallaallalalalalalalalalalal</p></li></a>
+			<li><a href=""><img src="marioBros.png", width="500px" height="625px" alt=""  /><p>Black Adam</p>
+                <p> Blabllalalalalalalalalallaallalalalalalalalalalal</p></li></a>
+			<li><a href=""><img src="Avatar2.png", width="500px" height="625px" alt="" />
+                <p>Black Adam</p>
+                <p> Blabllalalalalalalalalallaallalalalalalalalalalal</p></li></a>
+		</ul>
+	</div>
+
+    <br>
+    <br>
+	</section>
+
+
+    <div id = "Movies">
+        <div id = "titre1">Movies in Theatre</div><br>
+
+            <div id = "aside">
+            
+                    <aside id = "cadre1">
+                        <div id = "photo"> 
+                            <p id="cadre"><img src="BlackAdam.png", width="250px" alt="cadre" /></p>
+                        </div>
+                    </aside> 
+    
+                    <aside>
+                        
+                        <h1 id="nom"> Black Adam </h1>
+                        <h1 id="type">Action + SuperHero</h1> 
+    
+                        <div id="text">
+                        
+                        <br>
+                            Synopsis
+
+                            Dans l'ancien Kahndaq, Teth Adam a reçu les pouvoirs tout-puissants des dieux. Après avoir utilisé ces pouvoirs pour se venger, il a été emprisonné, devenant Black Adam. Près de 5 000 ans se sont écoulés et Black Adam est passé de l'homme au mythe puis à la légende.
+                        </div>
+                     <br>
+                    <h1 id="caract"> Schedule: </h1>
+                    <ul>
+                        <button id="button-addon2" type="submit" class="btn btn-link" style=background-color:aqua>
+                            10:52
+                        </button>
+
+                        <button id="button-addon2" type="submit" class="btn btn-link" style=background-color:aqua>
+                            14:55
+                        </button>
+
+                        <button id="button-addon2" type="submit" class="btn btn-link" style=background-color:aqua>
+                            20:32
+                        </button>
+                    </ul>    
+                        
+                    </aside>
+                      
+                    <br>
+            </div>
+    
+                 
+              
+             
+            </div>  
+         
+            <br>
+    </div>
+
+
+
+
+<div id = "titre1">Login</div><br>
+    <div id = "Login">
+
+        
+
+        <div id = "LoginText">
+            Want to become one of us? or Login if you are a member
+            <br>
+            Come and subscribe to us
+            <br>
+        </div>
+        <form action="/addCustomer" method="GET" class="bg-light">
+            <div class="input-group">
+                <br>Name<br>
+                <input type="text" name="userName" placeholder="Your name" aria-describedby="button-addon2" class="form-control rounded-0 border-0 bg-light">
+                <br>Surname<br>
+                
+                <input type="text" name="userSurname" placeholder="Your Surname" aria-describedby="button-addon2" class="form-control rounded-0 border-0 bg-light">
+                <br>Password<br>
+                <input type="text" name="userPassword" placeholder="Your Password" aria-describedby="button-addon2" class="form-control rounded-0 border-0 bg-light">
+                <div class="input-group-append pb-1"><br><br>
+                     <button id="button-addon2" type="submit" class="btn btn-link" style=background-color:aqua>
+                        Submit
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+    
+    <div class="messageArea" id="messageArea" >
+
+
+    </div>
+    
+    <div id="sendMessageForm" class="ml-2 mr-2">
+        <form action="/addMessageandResponse" method="GET" class="bg-light">
+            <div class="input-group">
+                <input type="text" name="message" placeholder="Type a message" aria-describedby="button-addon2" class="form-control rounded-0 border-0 bg-light">
+                <div class="input-group-append pb-1">
+                    <button id="button-addon2" type="submit" class="btn btn-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-send mr-1 mt-1 pb-1" viewBox="0 0 16 16">
+                            <path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576 6.636 10.07Zm6.787-8.201L1.591 6.602l4.339 2.76 7.494-7.493Z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </form>
+    
+    </div>
+
+    <footer>
+        <div id = "footer">
+            <div id = "logo2">
+                <img src = "Logo.png"> 
+            </div>
+            <ul>
+                <li> <a href = "#"> Home Menu</a></li>
+                <br>
+                <li> <a href = "#"> Movies</a></li>
+                <br>
+                <li> <a href = "#"> Login</a></li>
+                <br>
+            </ul>
+        </div>
+
+
+    </footer>
+</body>
+
+
+
+</html>
